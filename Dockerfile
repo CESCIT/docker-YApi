@@ -6,7 +6,7 @@ RUN apk add --update --no-cache ca-certificates curl wget cmake build-base git b
   && update-ca-certificates
 
 # YApi 版本
-ENV YAPI_VERSION=1.10.2
+ENV YAPI_VERSION=1.10.2.1
 
 # 编译脚本
 WORKDIR /yapi/scripts
@@ -20,7 +20,7 @@ RUN git clone \
   --branch "v${YAPI_VERSION}" \
   --single-branch \
   --depth 1 \
-  https://github.com/YMFE/yapi.git .
+  https://github.com/CESCIT/yapi.git .
 
 # 拷贝启动脚本
 RUN cp /yapi/scripts/start.js ./start.js
